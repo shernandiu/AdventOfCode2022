@@ -1,9 +1,4 @@
 from collections import defaultdict
-# text = '''30373
-# 25512
-# 65332
-# 33549
-# 35390'''
 with open('input/day8.sql', 'r') as f:
     text = f.read()
 matrix = [[int(x) for x in i] for i in text.splitlines()]
@@ -38,7 +33,6 @@ def checkLine(line, index: int, vertical: bool):
 [checkLine(line, index, False) for index, line in enumerate(matrix)]
 [checkLine(colum, index, True) for index, colum in enumerate([[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix))])]
 
-# print(len(visibles))
 
 for i in scenic_score:
     print(' '.join(map(str, i)))
